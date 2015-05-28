@@ -4,8 +4,14 @@ require 'Gosu'
 
 class Game < Gosu::Window
 
-	def initialize()
-		super(800, 600, false)
+	attr_reader :width, :height, :is_fullscreen
+
+	def initialize
+		@width = 800
+		@height = 600
+		@is_fullscreen = false
+
+		super(@width, @height, @is_fullscreen)
 	end
 
 	def update
