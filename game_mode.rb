@@ -2,6 +2,7 @@
 
 require_relative './mermaid.rb'
 require_relative './treasure.rb'
+require_relative './shark.rb'
 
 class MainGameMode
 
@@ -12,12 +13,13 @@ class MainGameMode
 
 		if(number_of_players == 1)
 			@entities << Mermaid.new(game);
-		else
+		elsif(number_of_players == 2)
 			@entities << Mermaid.new(game);
 			@entities << Mermaid.new(game);
 		end
 
 		@entities << Treasure.new(game)
+		@entities << Shark.new(game)
 	end
 
 

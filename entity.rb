@@ -13,7 +13,7 @@ class Entity
 	end
 
 	def dead?
-		return health <= 0
+		return @health <= 0
 	end
 
 	def hit

@@ -23,8 +23,8 @@ class Treasure < Entity
 	def draw
 		@game.draw_quad(self.x + 0, 			self.y + 0, 	  	  0xFFFFFFFF,
 	                   self.x + self.width, self.y + 0, 	  	  0xFFFFFFFF,
-	                   self.x + self.width, self.y + self.height, 0xFFFFFFFF,
-	                   self.x + 0,			self.y + self.height, 0xFFFFFFFF,
+	                   self.x + self.width, self.y + self.height, 0xFFFFFF00,
+	                   self.x + 0,			self.y + self.height, 0xFFFFFF00,
 	                   0)		
 	end
 
