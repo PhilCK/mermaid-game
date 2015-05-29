@@ -22,11 +22,11 @@ class Shark < Entity
 	end
 
 	def draw
-@game.draw_quad(self.x + 0, 			self.y + 0, 	  	  0xFFFFFFFF,
-	                   self.x + self.width, self.y + 0, 	  	  0xFFFFFFFF,
-	                   self.x + self.width, self.y + self.height, 0xFFFF0000,
-	                   self.x + 0,			self.y + self.height, 0xFFFF0000,
-	                   10)
+		@game.draw_quad(self.x + 0, 			self.y + 0, 	  	  0xFFFFFFFF,
+			                   self.x + self.width, self.y + 0, 	  	  0xFFFFFFFF,
+			                   self.x + self.width, self.y + self.height, 0xFFFF0000,
+			                   self.x + 0,			self.y + self.height, 0xFFFF0000,
+			                   10)
 	end
 
 end
