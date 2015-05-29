@@ -1,5 +1,7 @@
+# Creates the entities and ending conditions for the game.
 
 require_relative './mermaid.rb'
+require_relative './treasure.rb'
 
 class MainGameMode
 
@@ -14,6 +16,8 @@ class MainGameMode
 			@entities << Mermaid.new(game);
 			@entities << Mermaid.new(game);
 		end
+
+		@entities << Treasure.new(game)
 	end
 
 

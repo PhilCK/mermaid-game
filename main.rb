@@ -1,4 +1,5 @@
-# Entry point for the game.
+# Entry point.
+# Holds current game state.
 
 require 'Gosu'
 require_relative './game_mode'
@@ -14,6 +15,7 @@ class Game < Gosu::Window
 		@is_fullscreen = false
 
 		super(@width, @height, @is_fullscreen)
+		self.caption = "Mermaids"
 
 		@game_state = MainGameMode.new(self, 1)
 	end

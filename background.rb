@@ -1,3 +1,4 @@
+# Background for the game.
 
 class Background
 
