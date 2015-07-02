@@ -2,7 +2,7 @@
 
 class Entity
 
-	attr_reader :x, :y, :width, :height
+	attr_accessor :x, :y, :width, :height
 	attr_reader :health
 	attr_reader :name
 

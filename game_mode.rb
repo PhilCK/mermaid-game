@@ -80,7 +80,22 @@ class MainGameMode
 					shark_aabb = AABB.new(e.x, e.y, e.x + e.width, e.y + e.height)
 
 					if(player_aabb.contains?(shark_aabb))
-						puts "collided"
+						puts "collided with shark"
+					end
+
+				end
+
+				if e.name == :treasure
+
+					chest_aabb = AABB.new(e.x, e.y, e.x + e.width, e.y + e.height)
+
+					if(player_aabb.contains?(chest_aabb))
+						puts "chest collision"
+
+						if(player.holding_obj == nil)
+							puts "pickingup chest"
+							player.holding_obj = e;
+						end
 					end
 
 				end

@@ -4,7 +4,7 @@ require_relative './entity.rb'
 
 class Mermaid < Entity
 
-	attr_accessor :game
+	attr_accessor :game, :holding_obj
 
 
 	def initialize(game)
@@ -14,6 +14,7 @@ class Mermaid < Entity
 		@width = 50
 		@height = 20
 		@speed = 7
+		@holding_obj = nil
 	end
 
 
@@ -41,6 +42,12 @@ class Mermaid < Entity
 		if(@y < 0) then @y = 0 end
 		if(@x + @width > @game.width) then @x = @game.width - @width end
 		if(@y + @height > @game.height) then @y = @game.height - @height end
+
+
+		if(@holding_obj)
+			@holding_obj.x = @x;
+			@holding_obj.y = @y - @holding_obj.height;
+		end
 	end
 
 	def draw
@@ -49,6 +56,11 @@ class Mermaid < Entity
 	                   self.x + self.width, self.y + self.height, 0xFFFFFFFF,
 	                   self.x + 0,			self.y + self.height, 0xFFFFFFFF,
 	                   0)
+	end
+
+
+	def pickup_object(obj)
+		@holding_obj = obj
 	end
 
 end
