@@ -3,6 +3,7 @@
 require_relative './mermaid.rb'
 require_relative './treasure.rb'
 require_relative './shark.rb'
+require_relative './ship.rb'
 
 NUMBER_OF_SHARKS = 5
 
@@ -58,6 +59,7 @@ class MainGameMode
 			@players = [@player_one, @player_two]
 		end
 
+		@entities << Ship.new(game)
 		@entities << Treasure.new(game)
 
 		NUMBER_OF_SHARKS.times do
@@ -75,6 +77,7 @@ class MainGameMode
 
 			@entities.each do |e|
 
+				# Take Damage
 				if e.name == :shark
 
 					shark_aabb = AABB.new(e.x, e.y, e.x + e.width, e.y + e.height)
@@ -85,6 +88,7 @@ class MainGameMode
 
 				end
 
+				# Pickup treasure
 				if e.name == :treasure
 
 					chest_aabb = AABB.new(e.x, e.y, e.x + e.width, e.y + e.height)
